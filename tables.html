@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="petDosageClasses.js"></script>
+    <script type="module" src="tables.js"></script>
+    
+    <title>Pawscriber</title>
+</head>
+<body>
+    <h1>Pawscriber: Dosage Calculator for Canines and Felines</h1>
+
+    <table id="header" style="display: flex; justify-content: center; align-items: center;">
+        <tr>
+            <td class="header" id="petName"></td>
+            <td class="header" id="ownerName"></td>
+            <td class="header" id="species"></td>
+            <td class="header" id="kgs"></td>
+            <td class="header" id="lbs"></td>
+        </tr>
+    </table>
+
+
+    <div style="display: flex; justify-content: center;">
+        <!-- justify-content: center;  -->
+        <div>
+            <!-- Emergency Table -->
+            <table id="non-header" width="505">
+                <tr>
+                    <th id="table-header" colspan="7">Emergency Medications</th>
+                </tr>
+
+                <tr>
+                    <th rowspan="2">Drug</th>
+                    <th rowspan="2">Conc. mg/mL</th>
+                    <th rowspan="2">Range mg/kg</th>
+                    <th rowspan="2">Species</th>
+                    <th rowspan="1" colspan="3">Volume</th>
+                    <tr>
+                        <th rowspan="1">Low</th>
+                        <th rowspan="1">Mid</th>
+                        <th rowspan="1">High</th>
+                    </tr>
+                </tr>
+
+                <tr>
+                    <td>Atropine</td>
+                    <td>0.4</td>
+                    <td>0.02 - 0.04</td>
+                    <td>C/F</td>
+                    <td id="atropine4Min"></td>
+                    <td id="atropine4Avg"></td>
+                    <td id="atropine4Max"></td>
+                </tr>
+
+                <tr>
+                    <td>Atropine</td>
+                    <td>0.54</td>
+                    <td>0.02 - 0.04</td>
+                    <td>C/F</td>
+                    <td id="atropine5Min"></td>
+                    <td id="atropine5Avg"></td>
+                    <td id="atropine5Max"></td>
+                </tr>
+
+                <tr>
+                    <td>Dexamethasone SP</td>
+                    <td>4</td>
+                    <td>1 - 4</td>
+                    <td>C/F</td>
+                    <td id="dexaSPMin"></td>
+                    <td id="dexaSPAvg"></td>
+                    <td id="dexaSPMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Diphenhydramine</td>
+                    <td>50</td>
+                    <td>1 - 2.2</td>
+                    <td>C/F</td>
+                    <td id="diphenMin"></td>
+                    <td id="diphenAvg"></td>
+                    <td id="diphenMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Ephedrine</td>
+                    <td>50</td>
+                    <td>0.05 - 0.1</td>
+                    <td>C/F</td>
+                    <td id="ephedrineMin"></td>
+                    <td id="ephedrineAvg"></td>
+                    <td id="ephedrineMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Glycopyrrolate</td>
+                    <td>0.2</td>
+                    <td>0.005 - 0.01</td>
+                    <td>C/F</td>
+                    <td id="glycoMin"></td>
+                    <td id="glycoAvg"></td>
+                    <td id="glycoMax"></td>
+                </tr>
+
+            </table>
+
+            <!-- ALS Medications -->
+            <table id="non-header" width="505">
+                <tr>
+                    <th id="table-header" colspan="7">Advanced Life Support (ALS) Medications</th>
+                </tr>
+
+                <tr>
+                    <th rowspan="2">Drug</th>
+                    <th rowspan="2">Conc. mg/mL</th>
+                    <th rowspan="2">Range mg/kg</th>
+                    <th rowspan="2">Species</th>
+                    <th rowspan="1" colspan="3">Volume</th>
+                    <tr>
+                        <th rowspan="1">Low</th>
+                        <th rowspan="1">Mid</th>
+                        <th rowspan="1">High</th>
+                    </tr>
+                </tr>
+
+                <tr>
+                    <td>Atipamezole</td>
+                    <td>5</td>
+                    <td>0.05 - 0.1</td>
+                    <td>C/F</td>
+                    <td id="atipamezoleMin"></td>
+                    <td id="atipamezoleAvg"></td>
+                    <td id="atipamezoleMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Flumazenil</td>
+                    <td>0.1</td>
+                    <td>0.01</td>
+                    <td>C/F</td>
+                    <td id="flumazenilMin"></td>
+                    <td id="flumazenilAvg"></td>
+                    <td id="flumazenilMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Naxolone</td>
+                    <td>0.4</td>
+                    <td>0.04</td>
+                    <td>C/F</td>
+                    <td id="naxoloneMin"></td>
+                    <td id="naxoloneAvg"></td>
+                    <td id="naxoloneMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Atropine</td>
+                    <td>0.4</td>
+                    <td>0.05</td>
+                    <td>C/F</td>
+                    <td id="atropine41Min"></td>
+                    <td id="atropine41Avg"></td>
+                    <td id="atropine41Max"></td>
+                </tr>
+
+                <tr>
+                    <td>Atropine</td>
+                    <td>0.54</td>
+                    <td>0.05</td>
+                    <td>C/F</td>
+                    <td id="atropine51Min"></td>
+                    <td id="atropine51Avg"></td>
+                    <td id="atropine51Max"></td>
+                </tr>
+
+                <tr>
+                    <td>Epinephrine</td>
+                    <td>1</td>
+                    <td>0.01 - 0.1</td>
+                    <td>C/F</td>
+                    <td id="epinephrineMin"></td>
+                    <td id="epinephrineAvg"></td>
+                    <td id="epinephrineMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Amiodarone</td>
+                    <td>50</td>
+                    <td>5</td>
+                    <td>C/F</td>
+                    <td id="amiodaroneMin"></td>
+                    <td id="amiodaroneAvg"></td>
+                    <td id="amiodaroneMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Lidocaine</td>
+                    <td>20</td>
+                    <td>2 - 4</td>
+                    <td>C</td>
+                    <td id="lidocaneCMin"></td>
+                    <td id="lidocaneCAvg"></td>
+                    <td id="lidocaneCMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Lidocaine</td>
+                    <td>20</td>
+                    <td>0.2</td>
+                    <td>F</td>
+                    <td id="lidocaneFMin"></td>
+                    <td id="lidocaneFAvg"></td>
+                    <td id="lidocaneFMax"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <!-- Anesthesia Medications -->
+            <table id="non-header" width="550" height="390" >
+                <tr>
+                    <th id="table-header" colspan="7">Anesthesia and Analeyesia Medications</th>
+                </tr>
+
+                <tr>
+                    <th rowspan="2">Drug</th>
+                    <th rowspan="2">Conc. mg/mL</th>
+                    <th rowspan="2">Range mg/kg</th>
+                    <th rowspan="2">Species</th>
+                    <th rowspan="1" colspan="3">Volume</th>
+                    <tr>
+                        <th rowspan="1">Low</th>
+                        <th rowspan="1">Mid</th>
+                        <th rowspan="1">High</th>
+                    </tr>
+                </tr>
+
+                <tr>
+                    <td>Acepromazine</td>
+                    <td>1</td>
+                    <td>0.005 - 0.05</td>
+                    <td>C</td>
+                    <td id="acepromazineCMin"></td>
+                    <td id="acepromazineCAvg"></td>
+                    <td id="acepromazineCMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Acepromazine</td>
+                    <td>1</td>
+                    <td>0.01 - 0.1</td>
+                    <td>F</td>
+                    <td id="acepromazineFMin"></td>
+                    <td id="acepromazineFAvg"></td>
+                    <td id="acepromazineFMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Alfaxalone</td>
+                    <td>10</td>
+                    <td>1 - 4</td>
+                    <td>C/F</td>
+                    <td id="alfaxaloneMin"></td>
+                    <td id="alfaxaloneAvg"></td>
+                    <td id="alfaxaloneMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Atipamezole</td>
+                    <td>5</td>
+                    <td>0.05</td>
+                    <td>C/F</td>
+                    <td id="atipamezoleAMin"></td>
+                    <td id="atipamezoleAAvg"></td>
+                    <td id="atipamezoleAMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Atipamezole</td>
+                    <td>5</td>
+                    <td>0.012 - 0.021</td>
+                    <td>F</td>
+                    <td id="atipamezoleFMin"></td>
+                    <td id="atipamezoleFAvg"></td>
+                    <td id="atipamezoleFMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Bupivacaine</td>
+                    <td>5</td>
+                    <td>1 - 2</td>
+                    <td>C</td>
+                    <td id="bupivacaineCMin"></td>
+                    <td id="bupivacaineCAvg"></td>
+                    <td id="bupivacaineCMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Bupivacaine</td>
+                    <td>5</td>
+                    <td>1 - 1.5</td>
+                    <td>F</td>
+                    <td id="bupivacaineFMin"></td>
+                    <td id="bupivacaineFAvg"></td>
+                    <td id="bupivacaineFMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Buprenorphine</td>
+                    <td>0.3</td>
+                    <td>0.005 - 0.02</td>
+                    <td>C</td>
+                    <td id="buprenorphineCMin"></td>
+                    <td id="buprenorphineCAvg"></td>
+                    <td id="buprenorphineCMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Buprenorphine</td>
+                    <td>0.3</td>
+                    <td>0.01 - 0.02</td>
+                    <td>F</td>
+                    <td id="buprenorphineFMin"></td>
+                    <td id="buprenorphineFAvg"></td>
+                    <td id="buprenorphineFMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Buprenorphine LA</td>
+                    <td>1.8</td>
+                    <td>0.24</td>
+                    <td>F</td>
+                    <td id="buprenorphineLAMin"></td>
+                    <td id="buprenorphineLAAvg"></td>
+                    <td id="buprenorphineLAMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Butorphanol</td>
+                    <td>10</td>
+                    <td>0.2 - 0.4</td>
+                    <td>C/F</td>
+                    <td id="butorphanolMin"></td>
+                    <td id="butorphanolAvg"></td>
+                    <td id="butorphanolMax"></td>
+                </tr>
+
+
+                <tr>
+                    <td>Carprofen</td>
+                    <td>50</td>
+                    <td>4 - 4.4</td>
+                    <td>C</td>
+                    <td id="carprofenMin"></td>
+                    <td id="carprofenAvg"></td>
+                    <td id="carprofenMax"></td>
+                </tr>
+
+
+
+                <tr>
+                    <td>Dexmedetomidine</td>
+                    <td>0.5</td>
+                    <td>0.002 - 0.005</td>
+                    <td>C</td>
+                    <td id="dexmedetomidineCMin"></td>
+                    <td id="dexmedetomidineCAvg"></td>
+                    <td id="dexmedetomidineCMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Dexmedetomidine</td>
+                    <td>0.5</td>
+                    <td>0.005 - 0.01</td>
+                    <td>F</td>
+                    <td id="dexmedetomidineFMin"></td>
+                    <td id="dexmedetomidineFAvg"></td>
+                    <td id="dexmedetomidineFMax"></td>
+                </tr>
+
+                <tr>
+                    <td>DKT Mixture</td>
+                    <td>1</td>
+                    <td>0.035 - 0.065</td>
+                    <td>F</td>
+                    <td id="dktMin"></td>
+                    <td id="dktAvg"></td>
+                    <td id="dktMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Fentanyl</td>
+                    <td>0.05</td>
+                    <td>0.003 - 0.005</td>
+                    <td>C/F</td>
+                    <td id="fentanylMin"></td>
+                    <td id="fentanylAvg"></td>
+                    <td id="fentanylMax"></td>
+                </tr>
+
+                <!-- start here -->
+                <tr>
+                    <td>Hydromorphone</td>
+                    <td>2</td>
+                    <td>0.05 - 0.2</td>
+                    <td>C</td>
+                    <td id="hydromorphoneCMin"></td>
+                    <td id="hydromorphoneCAvg"></td>
+                    <td id="hydromorphoneCMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Hydromorphone</td>
+                    <td>2</td>
+                    <td>0.05 - 0.1</td>
+                    <td>F</td>
+                    <td id="hydromorphoneFMin"></td>
+                    <td id="hydromorphoneFAvg"></td>
+                    <td id="hydromorphoneFMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Ketamine</td>
+                    <td>100</td>
+                    <td>1 - 2</td>
+                    <td>C</td>
+                    <td id="ketamineMin"></td>
+                    <td id="ketamineAvg"></td>
+                    <td id="ketamineMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Lidocaine</td>
+                    <td>20</td>
+                    <td>1 - 4</td>
+                    <td>C</td>
+                    <td id="lidocaineCMin"></td>
+                    <td id="lidocaineCAvg"></td>
+                    <td id="lidocaineCMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Lidocaine</td>
+                    <td>20</td>
+                    <td>1 - 2</td>
+                    <td>F</td>
+                    <td id="lidocaineFMin"></td>
+                    <td id="lidocaineFAvg"></td>
+                    <td id="lidocaineFMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Maropitant Citrate</td>
+                    <td>10</td>
+                    <td>1</td>
+                    <td>C/F</td>
+                    <td id="maropitantCitrateMin"></td>
+                    <td id="maropitantCitrateAvg"></td>
+                    <td id="maropitantCitrateMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Meloxicam</td>
+                    <td>5</td>
+                    <td>0.2</td>
+                    <td>C</td>
+                    <td id="meloxicamCMin"></td>
+                    <td id="meloxicamCAvg"></td>
+                    <td id="meloxicamCMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Meloxicam</td>
+                    <td>0.05</td>
+                    <td>0.3</td>
+                    <td>F</td>
+                    <td id="meloxicamFMin"></td>
+                    <td id="meloxicamFAvg"></td>
+                    <td id="meloxicamFMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Midazolam</td>
+                    <td>1</td>
+                    <td>0.1 - 0.3</td>
+                    <td>C/F</td>
+                    <td id="midazolam1Min"></td>
+                    <td id="midazolam1Avg"></td>
+                    <td id="midazolam1Max"></td>
+                </tr>
+
+                <tr>
+                    <td>Midazolam</td>
+                    <td>5</td>
+                    <td>0.1 - 0.3</td>
+                    <td>C/F</td>
+                    <td id="midazolam5Min"></td>
+                    <td id="midazolam5Avg"></td>
+                    <td id="midazolam5Max"></td>
+                </tr>
+
+                <tr>
+                    <td>Propofol</td>
+                    <td>10</td>
+                    <td>1 - 8</td>
+                    <td>C/F</td>
+                    <td id="propofolMin"></td>
+                    <td id="propofolAvg"></td>
+                    <td id="propofolMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Robenacoxib</td>
+                    <td>20</td>
+                    <td>2</td>
+                    <td>C/F</td>
+                    <td id="robenacoxibMin"></td>
+                    <td id="robenacoxibAvg"></td>
+                    <td id="robenacoxibMax"></td>
+                </tr>
+
+                <tr>
+                    <td>Tiletamine/Zolazepam</td>
+                    <td>100</td>
+                    <td>1 - 4</td>
+                    <td>C/F</td>
+                    <td id="tiletamineMin"></td>
+                    <td id="tiletamineAvg"></td>
+                    <td id="tiletamineMax"></td>
+                </tr>
+
+            </table>
+        </div>
+    
+    </div> 
+    </div>
+
+
+    <!-- <button id="pdfBtn">Download as PDF</button> -->
+
+
+</body>
+</html>
