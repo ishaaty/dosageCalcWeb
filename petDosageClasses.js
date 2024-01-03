@@ -174,7 +174,7 @@ class anesthesiaAnalgesia {
 
         if (species == "Feline") {
             this.atipamezoleFMin = this.kgs * 0.012 / 5
-            this.atipamezoleFMin = this.kgs * 0.0165 / 5
+            this.atipamezoleFAvg = this.kgs * 0.0165 / 5
             this.atipamezoleFMax = this.kgs * 0.021 / 5
         } else {
             this.atipamezoleFMin = 0
@@ -184,7 +184,7 @@ class anesthesiaAnalgesia {
 
         if (species == "Canine"){
             this.bupivacaineCMin = this.kgs / 5
-            this.bupivacaineCMax = this.kgs * 1.5 / 5
+            this.bupivacaineCAvg = this.kgs * 1.5 / 5
             this.bupivacaineCMax = this.kgs * 2 / 5
         } else {
             this.bupivacaineCMin = 0
@@ -194,7 +194,7 @@ class anesthesiaAnalgesia {
 
         if (species == "Feline"){
             this.bupivacaineFMin = this.kgs / 5
-            this.bupivacaineFMin = this.kgs * 1.25 / 5
+            this.bupivacaineFAvg = this.kgs * 1.25 / 5
             this.bupivacaineFMax = this.kgs * 1.5 / 5
         } else {
             this.bupivacaineFMin = 0
@@ -204,7 +204,7 @@ class anesthesiaAnalgesia {
 
         if (species == "Canine"){
             this.buprenorophineCMin = this.kgs * 0.005 / 0.3
-            this.buprenorophineCMax = this.kgs * 0.0125 / 0.3
+            this.buprenorophineCAvg = this.kgs * 0.0125 / 0.3
             this.buprenorophineCMax = this.kgs * 0.02 / 0.3
         } else {
             this.buprenorophineCMin = 0
@@ -214,9 +214,11 @@ class anesthesiaAnalgesia {
 
         if (species == "Feline"){
             this.buprenorophineFMin = this.kgs * 0.01 / 0.3
+            this.buprenorophineFAvg = this.kgs * 0.015 / 0.3
             this.buprenorophineFMax = this.kgs * 0.02 / 0.3
         } else { 
             this.buprenorophineFMin = 0 
+            this.buprenorophineFAvg = 0
             this.buprenorophineFMax = 0
         }
 
@@ -226,104 +228,130 @@ class anesthesiaAnalgesia {
             this.buprenorphineLAMin = 0
         }
 
+        this.buprenorphineLAAvg = 0
         this.buprenorphineLAMax = 0
 
         this.butorphanelMin = this.kgs * 0.2 / 10
+        this.butorphanelAvg = this.kgs * 0.3 / 10
         this.butorphanelMax = this.kgs * 0.4 / 10
 
         if (species == "Canine"){
             this.carprofenMin = this.kgs * 4 / 50
+            this.carprofenAvg = this.kgs * 4.2 / 50
             this.carprofenMax = this.kgs * 4.4 / 50
         } else {
             this.carprofenMin = 0
+            this.carprofenAvg = 0
             this.carprofenMax = 0
         }
 
         if (species == "Canine"){
             this.dexmedetomidineCMin = this.kgs * 0.005 / 0.5
+            this.dexmedetomidineCAvg = this.kgs * 0.0125 / 0.5
             this.dexmedetomidineCMax = this.kgs * 0.02 / 0.5
         } else {
             this.dexmedetomidineCMin = 0
+            this.dexmedetomidineCAvg = 0
             this.dexmedetomidineCMax = 0
         }
 
         if (species == "Feline"){
             this.dexmedetomidineFMin = this.kgs * 0.005 / 0.5
+            this.dexmedetomidineFAvg = this.kgs * 0.0075 / 0.5
             this.dexmedetomidineFMax = this.kgs * 0.01 / 0.5
         } else {
             this.dexmedetomidineFMin = 0
+            this.dexmedetomidineFAvg = 0
             this.dexmedetomidineFMax = 0
         }
 
         if (species == "Feline"){
             this.DKTmixtureMin = this.kgs * 0.035
+            this.DKTmixtureAvg = this.kgs * 0.05
             this.DKTmixtureMax = this.kgs * 0.065 
         } else {
             this.DKTmixtureMin = 0
+            this.DKTmixtureAvg = 0
             this.DKTmixtureMax = 0 
         }
 
         this.fentanylMin = this.kgs * 0.003 / 0.05
+        this.fentanylAvg = this.kgs * 0.004 / 0.05
         this.fentanylMax = this.kgs * 0.005 / 0.05
 
         if (species == "Canine"){
             this.hydromorphoneCMin = this.kgs * 0.05 / 2
+            this.hydromorphoneCAvg = this.kgs * 0.125 / 2
             this.hydromorphoneCMax = this.kgs * 0.2 / 2
         } else {
             this.hydromorphoneCMin = 0
+            this.hydromorphoneCAvg = 0
             this.hydromorphoneCMax = 0
         }
 
         if (species == "Feline"){
             this.hydromorphoneFMin = this.kgs * 0.05 / 2 
+            this.hydromorphoneFAvg = this.kgs * 0.075 / 2
             this.hydromorphoneFMax = this.kgs * 0.1 / 2
         } else {
             this.hydromorphoneFMin = 0 
+            this.hydromorphoneFAvg = 0 
             this.hydromorphoneFMax = 0
         }
 
         if (species == "Canine"){
             this.ketamineMin = this.kgs / 100
+            this.ketamineAvg = this.kgs * 1.5 / 100
             this.ketamineMax = this.kgs * 2 / 100
         } else {
             this.ketamineMin = 0
+            this.ketamineAvg = 0
             this.ketamineMax = 0
         }
 
         if (species == "Canine") {
             this.lidocaineMinCA = this.kgs / 20
+            this.lidocaineAvgCA = this.kgs * 2.5 / 20
             this.lidocaineMaxCA = this.kgs * 4 / 20
             this.lidocaineMinFA = 0
+            this.lidocaineAvgFA = 0
             this.lidocaineMaxFA = 0
         }
 
         if (species == "Feline"){
             this.lidocaineMinFA = this.kgs / 20
+            this.lidocaineAvgFA = this.kgs * 1.5 / 20
             this.lidocaineMaxFA = this.kgs * 2 / 20
             this.lidocaineMinCA = 0
+            this.lidocaineAvgCA = 0
             this.lidocaineMaxCA = 0
         }
 
         this.maropitantCitrateMin = this.kgs / 10
+        this.maropitantCitrateAvg = 0
         this.maropitantCitrateMax = 0
 
         if (species == "Canine"){
             this.meloxicamCMin = this.kgs * 0.2 / 5
+            this.meloxicamCAvg = 0
             this.meloxicamCMax = 0
         } else {
             this.meloxicamCMin = 0
+            this.meloxicamCAvg = 0
             this.meloxicamCMax = 0
         }
 
         if (species == "Feline"){
             this.meloxicamFMin = this.kgs * 0.3 / 5
-            this.meloxicamFMax = 0
         } else {
             this.meloxicamFMin = 0
-            this.meloxicamFMax = 0
         }
 
+        this.meloxicamFAvg = 0
+        this.meloxicamFMax = 0
+
         this.midazolam1Min = this.kgs * 0.1
+        this.midazolam1Avg = this.kgs * 0.2
         this.midazolam1Max = this.kgs * 0.3
 
         this.midazolam5Min = this.kgs * 0.1 / 5
@@ -339,7 +367,7 @@ class anesthesiaAnalgesia {
         this.robenacoxibMax = 0
 
         this.tiletaminZolazepamMin = this.kgs / 100
-        this.tiletaminZolazepamMin = this.kgs * 2.5 / 100
+        this.tiletaminZolazepamAvg = this.kgs * 2.5 / 100
         this.tiletaminZolazepamMax = this.kgs * 4 / 100
         
 
