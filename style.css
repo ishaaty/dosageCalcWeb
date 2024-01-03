@@ -83,3 +83,16 @@ table {
     text-align: center;
     /* width: 200px; */
 }
+
+
+#disclaimer {
+    color: red; 
+    font-size: 9px; 
+    border: none;
+    cursor: auto;
+}
+
+#disclaimer:hover {
+    background-color: white;
+    color: red;
+}
