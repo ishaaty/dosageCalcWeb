@@ -11,6 +11,10 @@ body {
     margin: auto auto;
 }
 
+#table-body {
+    height: 140%;
+}
+
 html, body {
     height: 100%
 }
