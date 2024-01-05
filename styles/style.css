@@ -1,6 +1,17 @@
 html {
     font-family: 'Lato', sans-serif;
     text-align: center;
+    background-color: #56B2E8;
+}
+
+body {
+    width: 80%;
+    background-color: white;
+    margin: auto auto;
+}
+
+html, body {
+    height: 100%
 }
 
 label {
@@ -95,4 +106,28 @@ table {
 #disclaimer:hover {
     background-color: white;
     color: red;
+}
+
+img {
+    margin-top: 100px;
+    height: 40%;
+    width: 40%;
+}
+
+h2 {
+    margin-top: 0px;
+    color: #56B2E8;
+    font-size: 30px;
+}
+
+#start {
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
+    background-color: #56B2E8;
+    border-color: #56B2E8;
+}
+
+#start:hover {
+    background-color: #2d6280;
 }
