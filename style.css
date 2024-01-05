@@ -16,13 +16,11 @@ body {
     border-radius: 30px;
 }
 
-#tables {
-    width: 97%;
-    height: 135%;
-    margin-bottom: 50px;
+#table-body {
+    height: 140%;
 }
 
-html {
+html, body {
     height: 100%
 }
 
