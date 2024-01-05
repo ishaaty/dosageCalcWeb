@@ -9,6 +9,8 @@ body {
     width: 80%;
     background-color: white;
     margin: auto auto;
+
+    border-radius: 30px;
 }
 
 #table-body {
