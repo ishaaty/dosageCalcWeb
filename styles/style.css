@@ -1,6 +1,7 @@
 html {
     font-family: 'Lato', sans-serif;
     text-align: center;
+    justify-content: center;
     background-color: #56B2E8;
 }
 
@@ -15,13 +16,15 @@ html, body {
 }
 
 label {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 h1 {
-    color: black;
+    color: #56B2E8;
+    padding-top: 30px;
     margin-left: 40px;
     margin-top: 50px;
+    font-size: 44px;
 }
 
 
@@ -69,6 +72,8 @@ button:hover {
 
 .header {
     border: none;
+    font-size: 20px;
+    font-style: italic;
 }
 
 #header {
@@ -85,7 +90,8 @@ button:hover {
 
 #table-header {
     text-align:center; 
-    background-color: black; 
+    background-color: #56B2E8; 
+    border: #56B2E8;
     color: white;
 }
 

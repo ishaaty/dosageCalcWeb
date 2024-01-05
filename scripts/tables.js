@@ -113,7 +113,7 @@ let alsList = returnList(als.ALSList);
 for (let i = 0; i < alsTagsList.length; i++){
 
     if (alsList[i] == 0){
-        document.getElementById(alsTagsList[i].id).style.backgroundColor = "black";
+        document.getElementById(alsTagsList[i].id).style.backgroundColor = "#56B2E8";
     } else {
         alsTagsList[i].textContent = alsList[i];
     }
@@ -280,7 +280,7 @@ let anesList = returnList(anes.anesthesiaList);
 
 for (let i = 0; i < anesTagsList.length; i++){
     if (anesList[i] == 0){
-        document.getElementById(anesTagsList[i].id).style.backgroundColor = "black";
+        document.getElementById(anesTagsList[i].id).style.backgroundColor = "#56B2E8";
     } else {
         anesTagsList[i].textContent = anesList[i];
     }
