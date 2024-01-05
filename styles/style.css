@@ -59,14 +59,21 @@ button {
     border-radius: 15px;
     border-width: 2px;
     border-style: solid;
-    color: black;
-    background-color: white;
     cursor: pointer;
     transition: all .5s;
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
+    background-color: #56B2E8;
+    border-color: #56B2E8
+}
+
+#submit {
+    width: 100px;
 }
 
 button:hover {
-    background-color: black;
+    background-color: #2d6280;
     color: white;
 }
 
@@ -124,16 +131,4 @@ h2 {
     margin-top: 0px;
     color: #56B2E8;
     font-size: 30px;
-}
-
-#start {
-    height: 40px;
-    width: 150px;
-    font-size: 18px;
-    background-color: #56B2E8;
-    border-color: #56B2E8;
-}
-
-#start:hover {
-    background-color: #2d6280;
 }
