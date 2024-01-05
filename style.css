@@ -91,6 +91,7 @@ button:hover {
     border: none;
     font-size: 20px;
     font-style: italic;
+    padding-right: 30px;
 }
 
 #header {
@@ -150,4 +151,8 @@ footer {
     font-family: 'Lato', sans-serif;
     color: #56B2E8;
     font-size: 20px;
+}
+
+a {
+    color: #8149c2;
 }
